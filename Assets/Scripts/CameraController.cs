@@ -7,6 +7,8 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public GameObject player;
+    
+    public GameObject Ground;
     private Vector3 offset;
     // Start is called before the first frame update
     void Start()
@@ -21,11 +23,11 @@ public class CameraController : MonoBehaviour
 
 
 		/*
-		// Esto es para que la camara se acerque del punto central
+		// Esto es para que la camara se acerque del punto central, la parte 1 del punto 3
 		if(Input.GetKey(KeyCode.W))
             transform.Translate(Vector3.forward * 10.0f * Time.deltaTime);
         
-		// Esto es para que la camara se aleje del punto central
+		// Esto es para que la camara se aleje del punto central,  la parte 1 del punto 3
         if(Input.GetKey(KeyCode.S))
             transform.Translate(-Vector3.forward * 10.0f * Time.deltaTime);
         
@@ -36,7 +38,8 @@ public class CameraController : MonoBehaviour
             //transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
 		*/
 
-
+        // parte 2 del punto 2 sobre un movimiento diferente
+        /*
 		// Esto es para que la camara se acerque del punto central
 		if(Input.GetKey(KeyCode.W)){
             //transform.Translate(Vector3.forward * 10.0f * Time.deltaTime);
@@ -45,13 +48,11 @@ public class CameraController : MonoBehaviour
 		// Esto es para que la camara se aleje del punto central
         if(Input.GetKey(KeyCode.S))
             transform.Translate(-Vector3.forward * 10.0f * Time.deltaTime);
-
-        //if(Input.GetKey(KeyCode.A))
-            //
+        */
         
-        //if(Input.GetKey(KeyCode.D))
-            //transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
-
-
+        // parte 2 del punto 3
+        // Para que la camara se mueva alrededor de la mesa del juego 
+        transform.RotateAround(Ground.transform.position, Vector3.up, 20 * Time.deltaTime);
+        
     }
 }
